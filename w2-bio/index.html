@@ -8,40 +8,90 @@
     <meta name="author" content="Ryleigh Breen">
     <meta name="description" content="Week 2 Bio Page about Ryleigh">
     <title>Bio Page!</title>
-</head>
+    <style>
+        div{
 
-
-<body>
-   
-    <div id="header">
+            border:1px solid black;
+            padding:10px;
+            margin:5px;
+        }
+       
+        #wrapper{
+            background-color: rgb(129, 129, 129);
+        }
         
-        <h1>Ryleigh Breen - About Me</h1>
-      
+        #school{
+            background-color: lime;
+        }
+
+        #nav, #footer{
+            background-color: rgb(161, 48, 48);
+        }
+
+
+    </style>
+
+</head>
+<body style="background-color: gray;">
+    <div id="wrapper">   
+        <div>
+            <h1>Ryleigh Breen - About Me</h1>
+        </div>
+        
+        <div id="nav">
+
+            <a href="#bio">BIO</a>
+            <a href="#school">SCHOOL</a>
+            <a href="#hobbies">HOBBIES</a>
+            <a href="#footer">Bottom of page</a>
+            <a href="https://www.youtube.com/" target="_blank">YouTube!</a>
+        
+        </div>
+
+        <!--The start of the BIO topic-->
+        
+        <div id="bio">
+            <h2>Bio</h2>
+            <p><i>Hello!</i> I am <b>Ryleigh Breen</b> and i am here at NEIT studying Cybersecurity and Network Engineering. I am enjoying it here and hope to get my Bachelor's degree in due time. This is my first true website submission for my HTMP and Javascript class.</p>
+            <img src="images/NEIT.jpg" alt="NEIT logo" style="width:500px">
+            
+        </div>
+
+        <hr>
+        <!--The start of the School topic-->
+        <div id="school">
+            <h2>Schooling</h2>
+            <ol>
+                <li>01. Boynton Middle School</li>
+                <li>02. Mascenic Regional High School</li>
+                <li>03. New England Institute of Technology</li>
+            </ol>
+
+
+        </div>
+        <hr>
+        <!--The start of the Hobbies topic-->
+        <div id="hobbies">
+
+            <h2>Hobbies</h2>
+            <ul>
+                <li><u>Astrophotography</u></li>
+                <li>Gaming</li>
+                <li>Cars</li>
+                </ul>
+                <img src="images/MOON.jpg" alt="Not my image but an image of the moon" style="width:500px">
+
+        </div>
+        <!--The start of the footer-->
+        <div id="footer">
+            <p>&copy; 2022 | R Breen | SE111.32</p>
+            <br>
+            <a href="#wrapper">Back to Top</a>
+            <br>
+            <img src="images/Screenshot 2022-01-27 002854.png" alt="validated screenshot" style="width: 700px">
+        </div>
+
     </div>
 
-    
-    <div id="nav">
-
-        <a href="index.html" class="link">HOME</a>
-        <a href="about.html" class="link">ABOUT</a>
-        <a href="schooling.html" class="link">SCHOOLS</a>
-        <a href="hobbies.html" class="link">HOBBIES</a>
-
-    </div>
-
-    <div id="content">
-
-        <p>content of page</p>
-
-    </div>
-
-
-    <div id="footer">
-
-        <p></p>
-
-    </div>
 </body>
-
-
 </html>
