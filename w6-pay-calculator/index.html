@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ryleigh Breen">
+    <meta name="description" content="w6 pay calculator">
+    <title>W6 | Pay Calculator</title>
+</head>
+
+<body>
+
+    <script>
+        var hoursWorked = Number(prompt(`Hours Worked?`))
+        
+        var hourlyPay = Number(prompt(`Hourly pay?`))
+        
+        var grossPay = hoursWorked * hourlyPay
+        
+        var taxRate = grossPay * 0.2
+        
+        var netPay = grossPay - taxRate
+
+        console.log(`Gross Pay: $` + grossPay.toFixed(2))
+        var grosspay = (grossPay.toFixed(2))
+
+        console.log(`Tax: $` + taxRate.toFixed(2))
+        var tax = (taxRate.toFixed(2))
+
+        console.log(`Net Pay: $` + netPay.toFixed(2))
+        var netpay = (netPay.toFixed(2))
+    
+        alert(`Gross Pay: $` + grosspay + `\nTax: $` + tax + `\nNet Pay: $` + netpay)
+    
+    
+    </script>
+
+</body>
+
+</html>
