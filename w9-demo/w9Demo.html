@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 9 Assignment Demo</title>
+
+<style>
+    div {
+        border:1px solid red;
+       
+        margin-bottom:5px;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <h1>W9 | DOM Practice </h1>
+    <h3>Creating new elements and appending to page.</h3>
+    <br>
+    <br>
+
+    <script type="text/javascript">
+/*WEEK 9 JAVASCRIPT NOTES!
+
+
+console.dir()---selecting with this shows the element in console as an   objectthis is helpful to see children/parent/and node information and array index placement
+
+.querySelector()---selects an element within the html needs to be suplied a valid selector (id, class, element type)
+
+.children[]---gives access to a child element (element inside the object element; need to include index # in the []
+
+.parentElement---gives access to the parent or containing element; similar to ../ in termina file paths
+
+.setAttribute()---creates a new attribute and aplies to the element preceding the . needs to be supplied an attribute type and value for said attribute
+
+.createElement()---creates an HTML element* needs to be supplied the element/tag type requires appendChild() second step
+
+.createTextNode()---creates a text node (text content) so it can be applied to elements 
+    * needs to be supplied text content / string values requires appendChild() second step
+    * needs .appendChild() before it will be added to the page
+
+.appendChild()---add an element or text node inside of a pre-exisiting element (container/parent) this will allow for the element/node to be added to the HTML aka appear on page
+
+*/
+
+        //Use this Array of objects to complete the assignment.
+        var people =[
+            //people[0] is below; it's an object
+            {
+                first:"Daenerys", //in order to access people[0].first
+                last:"Targaryen", 
+                credit:"Queen of Meereen Khaleesi of the Great Grass Sea Mother of Dragons The Unburnt Breaker of Chains Television: Queen of the Andals and the First Men Protector of the Seven Kingdoms Lady of Dragonstone"
+            },
+            //people[1]
+            {   
+                first:"Cersei", 
+                last:"Lannister", 
+                credit:"Protector of the Realm Lady Paramount of the Westerlands Lady of Casterly Rock Light of the West Queen Dowager Queen Regent Television: Queen of the Andals and the First Men" 
+            },
+            //people[2]
+            {
+                first:"Yara", 
+                last:"Greyjoy", 
+                credit:"Queen of the Iron Islands and Lady Reaper of Pyke"
+            }
+        ]
+    
+        console.log(people[0]) //whole object stored in first position (index 0) of people array
+        console.log(people[0].first) //indiv value assigned to a property of a specific object in the array
+
+
+        //get the array of info written to the HTML document page to be viewed in browser
+        //each object's info should have a border, each property value should be in its own paragraph tag
+
+        //select the main element of the document to be able to add to it later
+        //body holds/is responsible for all of the visual content from the page
+        var body = document.querySelector(`body`)
+        console.log(body)//see the actual HTML element & its children (contents)
+        console.dir(body)//see the properties of the body element object
+        //body.innerHTML += `<div><p>${people[0]} ....
+
+        //since we need to do the same thing to each object stored in the array, we will start with a standard for loop
+        for(let i = 0; i < people.length; i++)
+        {//for every object stored to the array, add a div to the body element to hold the object's info (values)
+
+            //create the element
+            //this does NOT add the element to the page!
+            var tempDiv = document.createElement(`div`)
+
+            //add an id and class atttribute to the new div element
+            //.setAttribute adds attributes to elements; provide with `attribute type`, attribute value
+            tempDiv.setAttribute(`id`, i) //each div will have an id of the INDEX of where the object was found in the original people array
+
+            tempDiv.setAttribute(`class`, `red`)
+
+            //add the actual info to the inside of this newly created div
+            //the info comes fromt he values assigned to each object
+            //each value should be added to a paragraph tag that will live inside of the newly created div
+            //for every property of the object --> for key in object loop
+            for(key in people[i]) //for each key property in the current object
+            {
+                //below creates the new paragraph element for each value in object
+                var p = document.createElement(`p`)
+
+                //create the text node to add to the paragraph tag
+                var text = document.createTextNode(people[i][key])
+
+                //add the text (append!) to the paragraph tag
+                p.appendChild(text)
+                tempDiv.appendChild(p)
+            }
+            
+
+            //add the tempDiv back to the body element
+            body.appendChild(tempDiv)
+
+        }    
+        
+        
+    </script>
+
+
+</body>
+
+
+
+</html>
